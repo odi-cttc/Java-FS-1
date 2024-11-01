@@ -37,8 +37,8 @@ public class EmployeeController {
 
 	@PutMapping("/update/{id}")
 	//http://localhost:2025/update/1
-	public String deleteByMail(@PathVariable String id) {
-		return "";
+	public String updateById(@PathVariable Integer id, @RequestBody Employee emp) {
+		return employeeService.updateEmpById(id,emp);
 	}
 	
 	
