@@ -23,8 +23,8 @@ public class DemoHibernateApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		Product p1 = new Product(3, "Mobile", 40000);	
-		em.persist(p1);
-		System.out.println("Data Insert Success!");
+		//em.persist(p1);
+		//System.out.println("Data Insert Success!");
 	}
 
 }
