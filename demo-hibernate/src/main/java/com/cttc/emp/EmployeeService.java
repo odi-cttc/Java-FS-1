@@ -17,4 +17,6 @@ public interface EmployeeService {
 
 	String deleteEmployee(Long id);
 
+	Employee findByMail(String mail);
+
 }

@@ -41,4 +41,9 @@ public class EmployeeController {
 	public String deleteEmployee(@PathVariable Long id) {
 		return employeeService.deleteEmployee(id);
 	}
+	
+	@GetMapping("/findByMail/{mail}")
+	public Employee findByMail(@PathVariable String mail) {
+		return employeeService.findByMail(mail);
+	}
 }

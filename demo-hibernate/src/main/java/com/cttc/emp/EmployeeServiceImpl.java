@@ -62,4 +62,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 	}
 
+	@Override
+	public Employee findByMail(String mail) {
+		return dao.findByMail(mail);
+	}
+
 }
