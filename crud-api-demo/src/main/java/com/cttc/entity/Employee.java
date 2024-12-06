@@ -2,7 +2,10 @@ package com.cttc.entity;
 
 import java.io.Serializable;
 
+import com.cttc.UserInfo;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,5 +32,8 @@ public class Employee implements Serializable{
 	
 	@Column(unique = true, length = 12)
 	private String mobile;
+	
+	@Embedded
+	private UserInfo info;
 
 }

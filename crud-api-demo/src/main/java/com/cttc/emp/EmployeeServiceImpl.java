@@ -31,4 +31,28 @@ public class EmployeeServiceImpl implements EmployeeService {
 			return empById.get();
 		return null;
 	}
+
+	@Override
+	public Employee deleteById(Long id) {
+		Optional<Employee> getEmpById = dao.findById(id);
+		if(getEmpById.isPresent()) {
+			dao.deleteById(id);
+			return getEmpById.get();
+		}
+		else {
+		return null;
+		}
+	}
+
+	@Override
+	public Employee updateEmployee(Employee employee, Long id) {
+		Optional<Employee> existEmpById = dao.findById(id);
+		Employee existEmployee = existEmpById.get();
+		existEmployee.setFirstName(employee.getFirstName());
+		existEmployee.setLastName(employee.getLastName());
+		existEmployee.setMail(employee.getMail());
+		existEmployee.setMobile(employee.getMobile());
+		dao.save(existEmployee);
+		return existEmployee;
+	}
 }
