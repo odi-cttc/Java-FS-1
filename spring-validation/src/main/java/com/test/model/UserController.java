@@ -34,6 +34,6 @@ public class UserController {
 	            // Return the error response in JSON format with a 400 BAD_REQUEST status
 	            return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
 	        }
-		return ResponseEntity.ok("User created successfully!");
+		return new ResponseEntity<Object>(result, HttpStatus.OK);
 	}
 }
